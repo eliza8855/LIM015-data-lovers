@@ -1,3 +1,210 @@
+ # Data Lovers : Pokedex 
+
+# Definición del producto
+En este proyecto, realizamos una página web "Pokedex" que ayuda al usuario a obtener y filtrar datos de los
+primeros 251 Pokemones, para mejorar su experiencia con el juego Pokemon GO al interactuar 
+con nuestra interfaz. El objetivo principal es ofrecer una plataforma de consulta e identificación 
+de Pokemones, además de mostrarlos en su totalidad con sus características y de forma ordenada.
+Dicho producto sería usado por el ususario antes , durante y después de realizar sus búsquedas y estrategias.
+      
+
+# Historias de usuario
+
+
+## Historia 1 (Beginner)
+ _Yo como_ jugador Pokémon GO beginner _quiero_ realizar una **búsqueda** en la pagina **por nombre o número** del
+pokemón _para_ así acceder mucho más rápido a las características de este.
+
+**_Criterios de Aceptación:_** 
+
+     ☑️  En la interfaz debe estar visible el buscador y dentro un texto "buscar pokemón por nombre o número"
+     ☑️  Al dar click en la barra de busqueda, filtrar los pokemones que contengan las letras que se van colocando.
+     ☑️  La pagina debe mostrar el pokemón deseado.
+
+
+## Historia 2 (Beginner)
+ _Yo como_ maestro pokemon GO beginner _quiero_ **filtrar** los pokemones **por tipo** ( Normal, Fighting,
+ Flying, Poison, Ground, Rock, Bug, Ghost, Steel, Fire, Water, Grass, Electric, Psychic, Ice,
+ Dragon, Dark, Fairy). _para_ decidir qué tipo de pokemon usaré para mis siguientes batallas.
+
+  **_Criterios de Aceptación:_**
+
+     ☑️  Contar con una opción desplegable que contenga los  18 tipos de pokemones. 
+     ☑️  De todos los pokemones filtrados con  el tipo deseado poder dar clic en el pokemon deseado.
+     ☑️  Visualizar en una ventana emergente las características completas del pokemon elegido.
+
+
+## Historia 3 (Beginner)
+_Yo como_ maestro pokemon GO beginner _quiero_ poder **ordenar** a los pokemones de la A-Z y de la
+Z-A , _para_ poder tener una visualización ordenada de los 251 Pokemones.
+
+**_Criterios de Aceptación:_** 
+
+     ☑️  Contar con una opcion desplegable que indique 'ORDENAR' 
+     ☑️  Al dar click, se debe mostrar las opciones : A-Z  y  Z-A
+     ☑️  Habiendo seleccionado una opción, poder visualizar los pokemones de manera ordenada.
+
+## Historia 4 (Intermediate)
+_Yo como_ maestro pokemon GO intermediate  _quiero_ poder **visualizar** una opcion en la pagina
+sobre el **Top 10 en frecuencia** de aparición de los Pokemones , para tener al alcance dicha información
+cuando desee ir en búsqueda de más pokemones y capturarlos.
+
+**_Criterios de Aceptación:_** 
+
+     ☑️  Contar con una opcion que indique 'TOP 10'
+     ☑️  Al darle click, visualizar los pokemones con mayor frecuencia de aparición.
+ 
+
+## Historia 5 (Advanced)
+_Yo como_ maestro pokemon GO avanzado _quiero_ saber los principales ataques, movimientos, evolución
+ de mis pokemones para poder **definir mi estrategia de batalla** con otros maestros pokemones.
+
+**_Criterios de Aceptación:_** 
+
+     ☑️  Contar con una interfaz que muestre a los Pokemones  
+     ☑️  Al darle click, aparecerá un modal en donde el usuario podra visualizar  las características
+          del Pokemón seleccionado.
+
+## Historia 6 (Advanced)
+_Yo como_ maestro pokemon GO avanzado _quiero_ **filtrar** los principales ataques, movimientos, evolución
+ de mis pokemones para poder **definir mi estrategia de batalla** con otros maestros pokemones.
+
+**_Criterios de Aceptación:_** 
+
+     ☑️  Contar con una opción de  'BUSQUEDA AVANZADA' 
+     ☑️  Al darle click, aparecerá un modal en donde el usuario podra filtrar características de acuerdo a sus necesidades.
+     ☑️  Al dar click en 'BUSCAR', visualizar las características del Pokemón seleccionado.
+
+
+
+# Diseño de la Interfaz de Usuario
+
+### Prototipo de baja fidelidad
+
+[imagenes...] imagenes (link)
+
+.
+.
+.
+.
+
+# Plan de Acción :
+
+         
+    1. Entender las necesidades de los usuarios
+     (https://github.com/Laboratoria/LIM015-data-lovers/blob/main/src/data/pokemon/README.md)
+    2. Crear historias de usuario y criterios de aceptación.
+    3. Elaborar prototipo de baja fidelidad (diseño mobile y web).
+    4. Test de usabilidad
+    5. Iterar / mejorar diseño a partir de feedback de usuario
+    6. Elaborar diseño en alta fidelidad, aplicando los principios de diseño: contraste, alineación y jerarquia. (diseño mobile y web).
+    7. Implementación de la interfaz de usuario (html/css/javascript)
+         a) Mostrar interfaz principal que incluya como minimo filtro básico y un buscador por nombre (type submit).
+         b) Incluir las siguientes funcionalidades en el archivo src/data.js:
+              i. filterData(data, condition): esta función filter o filtrar recibiría la data, y nos retornaría aquellos datos que sí cumplan con la condición.
+              ii. Hacer prueba unitaria de filterData
+              iii. sortData (data, sortBy, sortOrder): esta función sort u ordenar recibe tres parámetros. El primer parámetro, data, nos entrega los datos. El segundo parámetro, sortBy, nos dice con respecto a cuál de los campos de la data se quiere ordenar. El tercer parámetro, sortOrder, indica si se quiere ordenar de manera ascendente o descendente.
+              iv. Hacer prueba unitaria de sortData.
+              v. computeStats(data): la función compute o calcular, nos permitirá hacer cálculos estadísticos básicos para ser mostrados de acuerdo a la data proporcionada.
+              vi. Hacer prueba unitaria de computeStats
+    8. Aplicar CSS 
+    9. Si nos sobra tiempo realizar etapa de Hacker Edition: 
+          - En lugar de consumir la data estática brindada en este repositorio, puedes consumir la data de forma dinámica, cargando un archivo JSON por medio de fetch. La carpeta src/data contiene una versión .js y una .json de de cada set datos.
+          - Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para ello te recomendamos explorar librerías de gráficas como Chart.js o Google Charts.
+          - 100% Coverage (test).
+
+
+
+# Objetivos de aprendizaje
+
+
+### HTML y CSS
+
+* [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* [ ] [Uso de selectores de CSS.](https://css-tricks.com/almanac/selectors/)
+* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
+* [ ] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+### DOM y Web APIs
+
+* [ ] [Uso de selectores del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Localizando_elementos_DOM_usando_selectores).
+* [ ] [Manejo de eventos del DOM.](https://www.w3schools.com/js/js_events.asp)
+* [ ] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
+(appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
+
+### JavaScript
+
+* [ ] Uso de condicionales (if-else | switch | operador ternario)
+* [ ] [Uso de bucles (for | for..in | for..of | while)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Bucles_e_iteraci%C3%B3n)
+* [ ] [Uso de funciones (parámetros | argumentos | valor de retorno)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones)
+* [ ] [Manipular arrays (filter | map | sort | reduce)](https://code.tutsplus.com/es/tutorials/how-to-use-map-filter-reduce-in-javascript--cms-26209)
+* [ ] [Manipular objects (key | value)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object)
+* [ ] [Uso ES modules](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/M%C3%B3dulos) ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+| [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
+* [ ] [Diferenciar entre expression y statements.](https://openclassrooms.com/en/courses/4309531-descubre-las-funciones-en-javascript/5108986-diferencia-entre-expresion-y-sentencia)
+* [ ] [Diferenciar entre tipos de datos atómicos y estructurados.](https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures)
+
+### Testing
+
+* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
+
+### Estructura del código y guía de estilo
+
+* [ ] [Organizar y dividir el código en módulos (Modularización)](https://medium.com/@sebastianpaduano/modularizaci%C3%B3n-en-javascript-538bd6c75fa)
+* [ ] Uso de identificadores descriptivos ([Nomenclatura](http://snowdream.github.io/javascript-style-guide/javascript-style-guide/es/naming-conventions.html) | [Semántica](https://geekytheory.com/semantica-coder))
+* [ ] Uso de linter (ESLINT)
+
+### Git y GitHub
+
+* [ ] [Uso de comandos de git (add | commit | pull | status | push)](https://github.com/jlord/git-it-electron)
+* [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages)
+* [ ] Colaboración en Github (branches | pull requests | |[tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
+
+### UX
+
+* [ ] Diseñar la aplicación pensando y entendiendo al usuario.
+* [ ] Crear prototipos para obtener feedback e iterar.
+* [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
+* [ ] Planear y ejecutar tests de usabilidad.
+
+
+
+
+
+
+
+# Checklist 
+
+* [ ] Usa VanillaJS.
+* [ ] No hace uso de `this`.
+* [ ] Pasa linter (`npm run pretest`)
+* [ ] Pasa tests (`npm test`)
+* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+  lines y branches.
+* [✔️] Incluye un _plan de acción_ de tus objetivos de aprendizaje prioritizado en `README.md` (o otro archivo).
+* [✔️] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [✔️] Incluye historias de usuario en `README.md`.
+* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+  `README.md`.
+* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+  en `README.md`.
+* [ ] Incluye link a Zeplin en `README.md`.
+* [ ] Incluye el listado de problemas que detectaste a través de tests de
+  usabilidad en el `README.md`.
+* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [ ] UI: Permite filtrar data en base a una condición.
+* [ ] UI: Es _responsive_.
+
+
+
+
+
+
+
+
+
+
 # Data Lovers
 
 ## Índice
