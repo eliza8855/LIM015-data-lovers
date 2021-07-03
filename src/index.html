@@ -13,7 +13,7 @@
     <header>
       <nav class="navbar-top">
         <a href="#home" class="navbar-logo" title="home">
-          <img src="https://www.pngkey.com/png/detail/32-329404_frames-illustrations-hd-download-the-vector-logo-pokemon.png" alt="Pokemon logo"> 
+          
         </a>
         <a href="#Home" class="navbar-item" title="home">Home</a>
         <a href="#Glossary" class="navbar-item" tittle="Glossary">Glosario</a>
@@ -27,16 +27,47 @@
         </form>
       </nav>
 
-      
+      <section>
+        <p id="list-type-pokemon">  Type Pokemon </p>
+        <select id="element-type-filter" >
+          <option value="all">All</option>
+          <option value="bug">Bug</option>
+          <option value="dark">Dark</option>
+          <option value="dragon"> Dragon</option>
+          <option value="electric">Electric</option>
+          <option value="fairy">Fairy</option>
+          <option value="fighting">Fighting</option>
+          <option value="fire">Fire</option>
+          <option value="flying">Flying</option>
+          <option value="ghost">Ghost</option>
+          <option value="grass">Grass</option>
+          <option value="ground">Ground</option>
+          <option value="ice">Ice</option>
+          <option value="normal">Normal</option>
+          <option value="poison">Poison</option>
+          <option value="psychic">Psychic</option>
+          <option value="rock">Rock</option>
+          <option value="steel">Steel</option>
+          <option value="water"> Water</option>
+        </select>
+
+      </section>
     </header>
     <main>
-      <div class="advance-searcher" id="advance-searcher-top"></div>
-      <div class="advance-searcher" id="advance-searcher-main"></div>
-      <div class="advance-searcher" id="advance-searcher-bottom">Mostrar búsqueda avanzada</div>
+      
+      
+      
     </main>
+    <div class="pokemones-quantity">
+      <div>
+        <p class="pokemones">Pokemones ( <spam id="quantity"></spam> )</p>
+      </div>
+
+      <div id="container-card"></div>  
+     <div class="container-modal"></div>
 
     <footer>
-
+       
     </footer>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
