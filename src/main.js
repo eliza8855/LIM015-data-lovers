@@ -10,6 +10,15 @@ const containerPokemons = document.getElementById('container-card');
 // const inputSearch = document.getElementById('search');
 
 
+const TypePokemon = (arrayType) => {
+    let imgEachPokemon = '';
+    arrayType.forEach((typeElement) => {
+      imgEachPokemon += `<img src="type-icons/${typeElement}.png" alt=" type pokemon"/>`;  
+    });
+    return imgEachPokemon;
+  };
+ 
+
 const showPokemon = (list) => {
     let count = 0;
     list.forEach((pokem) => {
@@ -19,11 +28,13 @@ const showPokemon = (list) => {
         <div class="poke-img">
           <p class="poke-num">Nº ${pokem.num}</p>
           <img src="${pokem.img}">
+          <div class="">${TypePokemon(pokem.type)}</div>
         </div>
         
         <div class="container-info">
           <p class="poke-name">${pokem.name}</p>
-          <div class="comun">${pokem.type}</div>
+          <!--<div class="comun">${pokem.type}</div>-->
+          
           <p class="poke-info bold"> CP Máx: ${pokem.stats['max-cp']}</p>
           <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p>
           
