@@ -13,7 +13,7 @@ const containerPokemons = document.getElementById('container-card');
 const TypePokemon = (arrayType) => {
     let imgEachPokemon = '';
     arrayType.forEach((typeElement) => {
-      imgEachPokemon += `<img src="type-icons/${typeElement}.png" alt=" type pokemon"/>`;  
+      imgEachPokemon += `<div id="poke-type-icon-box"><img id="poke-type-icon"src="type-icons/${typeElement}.png" alt=" type pokemon"/><div>`;  
     });
     return imgEachPokemon;
   };
@@ -28,7 +28,6 @@ const showPokemon = (list) => {
         <div class="poke-img">
           <p class="poke-num">Nº ${pokem.num}</p>
           <img src="${pokem.img}">
-          <div class="">${TypePokemon(pokem.type)}</div>
         </div>
         
         <div class="container-info">
@@ -36,9 +35,10 @@ const showPokemon = (list) => {
           <!--<div class="comun">${pokem.type}</div>-->
           
           <p class="poke-info bold"> CP Máx: ${pokem.stats['max-cp']}</p>
-          <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p>
-          
-        </div>`;
+          <p class="poke-info bold"> HP Máx: ${pokem.stats['max-hp']}</p
+        </div>
+        <div id="poke-type-icon-container">${TypePokemon(pokem.type)}</div>
+        `;
   
       card.addEventListener('click', () => {
         const show = showModal(pokem);
