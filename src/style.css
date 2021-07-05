@@ -1,125 +1,90 @@
 * {
- box-sizing:border-box;
- margin: 0;
- font-family: 'Poppins', sans-serif; 
-}
-
-/* header top*/
-.navbar-top {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: whitesmoke;
+    box-sizing:border-box;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+   }
    
-}
-
-.navbar-item {
-    padding: 30px 14px;
-    width: 100px;
-    text-align: center;
-    color: black;
-    text-decoration:none;
-    font-weight:500;
-} 
-
-.navbar-item:hover {
-     padding: 30px 14px;
-     background-color: #666869;
-     width: 100px;
-     text-align: center;
-     color: white; 
- } 
-.navbar-top img {
-    float:left;
-    height:80px;
-    padding: 0px;
-}
-
-
-#navbar-logo-box {
-    background: linear-gradient(to bottom, #B30828 0%, #B30828 50%, white 50%, white 100%);
-  }
-  
-  #navbar-logo-img{
-    display: block;
-    margin:auto;
-    padding: 10px 10px;
-    width:40%;
-    max-width: 400px;
-  }
-
-
-
-/* header bottom*/
-
-.navbar-bottom {
-    
-    padding: 15px 0px;
-}
-
-.navbar-search-container {
-    display:block;
-    width: 400px; 
-    margin:0 auto;
-}
-
-#navbar-search-bar{
-    margin: 0 auto;
-    width: 100%;
-    height: 45px;
-    border-radius: 15px; 
-    border: none;
-    padding: 0 10px; 
-    background: #CFE9F1;
-}
-
-#navbar-search-bar:focus{
-    outline: none; 
-}
-
-#navbar-search-bar:focus::placeholder{
-    visibility: hidden;
-}
-
-#navbar-search-icon {
-    position: relative; 
-    float: right;
-    bottom:35px;
-    right: 10px; 
-    color: black; 
-}
-
-
-.filters-container {
-    /* display: flex;
-    flex-wrap: wrap; */
-    padding: 6px;
-    margin:8px auto;
-    justify-content: space-between;
-    max-width: 500px;
-}
-
-.filter-individual-container {
-    /* padding: 6px 0;
-    height: 45px; */
-    border-radius: 15px; 
-    /* border: none;
-    padding: 0 10px;  */
-    background-color: #CFE9F1;
-}
-
-
-#filter-by-type {
+   /* HEADER*/
+   .navbar-top {
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       background-color:#D0455F;
+   }
+   
+   .navbar-top-item {
+       padding: 12px 14px;
+       width: 100px;
+       text-align: center;
+       color: black;
+       text-decoration:none;
+       font-weight:500;
+   } 
+   
+   .navbar-top-item:hover {
+        background-color: #666869;
+        color: white; 
+    } 
+   
+   #navbar-logo-box {
+     background: linear-gradient(to bottom, #B30828 0%, #B30828 50%, white 50%, white 100%);
+   }
+   
+   #navbar-logo-img{
+     display: block;
+     margin:auto;
+     padding: 10px 10px;
+     width:40%;
+     max-width: 400px;
+   }
+   
+   
+   /* FILTERS SECTION */
+   
+   .filters-container {
+       display: flex;
+       flex-wrap: wrap;
+       padding: 6px;
+       margin:8px auto;
+       justify-content: space-between;
+       max-width: 500px;
+   }
+   
+   .filter-individual-container {
+       padding: 6px 0;
+   }
+   
+   #filter-by-name-number {
+     width:100%;
+   }
+   
+   #filter-by-type {
     width:45%;
    }
    
    #filter-order-by{
     width:45%;
    }
-
-.pokemones-quantity{
-    text-align: center;
-}
+   
+   .filter-item {
+       background: #CFE9F1;
+       padding: 10px 2px;
+       border-radius: 15px; 
+       border-style: 2px solid ;
+       border-color:rgba(0,0,0,0.6);
+       width:100%;
+       font-size:14px;
+       text-align:center;
+   }
+   
+   
+   .filter-item:focus{
+       outline: none; 
+   }
+   
+   .filter-item:focus::placeholder{
+       visibility: hidden;
+   }
 
 
 #container-card{/**contenedor de card*/
@@ -201,6 +166,23 @@
     text-align: center;
 }
 
+#poke-type-icon-container {
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: center;
+}
+
+#poke-type-icon-box {
+    width: 40px;
+}
+
+#poke-type-icon {
+    width: 100%;
+}
+
+
+
 /* estilos del footer */
 
 footer{
@@ -236,7 +218,56 @@ footer .team, .apps{
 
 }
 
+/* Media queries */
 
+@media screen and (max-width:600px) {
+    #navbar-logo-img {
+    width:70%;
+    }
+    }
+  
+  @media screen and (max-width:480px) {
+   .navbar-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color:#D0455F;
+  }
+  
+  .filters-container {
+      margin:0 auto;
+      padding:0 5px;
+      }
+  
+   .navbar-top-item {
+      padding: 6px 7px;
+      width: 100px;
+      text-align: center;
+      color: black;
+      text-decoration:none;
+      font-weight:500;
+      font-size: 4vw;
+    }
+   #navbar-logo-img {
+    width:70%;
+    }
+  
+   .filter-item {
+      padding: 6px 2px;
+      width:100%;  /* ocupa el 100% de su contenedor padre */
+      font-size: 3.7vw;
+      text-align:center;
+     }
+  
+    #filter-by-type {
+    width:48%;
+    }
+  
+    #filter-order-by{
+    width:48%;
+    }
+  
+    }
 
 
 /* @media( min-width: 768px ){
