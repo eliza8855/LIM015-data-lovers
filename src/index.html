@@ -20,16 +20,22 @@
         <a href="#Top10" class="navbar-item" tittle="Top10">Top 10</a>
         <a href="#News" class="navbar-item" tittle="News">Noticias</a>
       </nav>
+
+      <div id="navbar-logo-box">
+        <img id="navbar-logo-img" src="IMG/pokemon-logo.png" alt="Pokemon logo">
+      </div> 
+
       <nav class="navbar-bottom">
         <form class="navbar-search-container">
-          <input type="search" id="navbar-search-bar" placeholder= "Buscar Pokémon por nombre o número">
+          <input type="search" id="navbar-search-bar" placeholder= "Search for a Pokemon by name or number">
           <a href="#" id="navbar-search-icon"><i class="fas fa-search"></i></a>
         </form>
       </nav>
 
-      <section>
-        <p id="list-type-pokemon">  Type Pokemon </p>
-        <select id="element-type-filter" >
+      <section class="filters-container" >
+        <div class="filter-individual-container" >
+        <select id="filter-by-type" >
+          <option value="">search by type</option>
           <option value="all">All</option>
           <option value="bug">Bug</option>
           <option value="dark">Dark</option>
@@ -49,15 +55,28 @@
           <option value="rock">Rock</option>
           <option value="steel">Steel</option>
           <option value="water"> Water</option>
-        </select>
+        </select> 
+      </div>
 
+     
+        <div class="filter-individual-container" id="filter-order-by" >
+          <select class="filter-item" >
+          <option value="">order by...</option>
+          <option value="option1">Lowest Number</option>
+          <option value="option2">Highest Number</option>
+          <option value="option2">A-Z</option>
+          <option value="option2">Z-A</option>
+          </select>
+       </div>
       </section>
     </header>
+
     <main>
       
       
       
     </main>
+
     <div class="pokemones-quantity">
       <div>
         <p class="pokemones">Pokemones ( <spam id="quantity"></spam> )</p>
@@ -72,11 +91,11 @@
         <h3 >Developer Team </h3>
         <div>
           <p> Elizabeth Lopez</p>
-          <a href="https://github.com/eliza8855"><img src="img/github.png"></a>
+          <a href="https://github.com/eliza8855"><img src="IMG/github.png"></a>
         </div>
         <div>
           <p> Maribel Maza </p>
-          <a href="https://github.com/mysticBel"><img src="img/github.png"></a>
+          <a href="https://github.com/mysticBel"><img src="IMG/github.png"></a>
         </div>
       </div>
 

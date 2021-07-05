@@ -35,6 +35,21 @@
     padding: 0px;
 }
 
+
+#navbar-logo-box {
+    background: linear-gradient(to bottom, #B30828 0%, #B30828 50%, white 50%, white 100%);
+  }
+  
+  #navbar-logo-img{
+    display: block;
+    margin:auto;
+    padding: 10px 10px;
+    width:40%;
+    max-width: 400px;
+  }
+
+
+
 /* header bottom*/
 
 .navbar-bottom {
@@ -52,9 +67,10 @@
     margin: 0 auto;
     width: 100%;
     height: 45px;
-    border-radius: 10px; 
+    border-radius: 15px; 
     border: none;
     padding: 0 10px; 
+    background: #CFE9F1;
 }
 
 #navbar-search-bar:focus{
@@ -73,6 +89,37 @@
     color: black; 
 }
 
+
+.filters-container {
+    /* display: flex;
+    flex-wrap: wrap; */
+    padding: 6px;
+    margin:8px auto;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+.filter-individual-container {
+    /* padding: 6px 0;
+    height: 45px; */
+    border-radius: 15px; 
+    /* border: none;
+    padding: 0 10px;  */
+    background-color: #CFE9F1;
+}
+
+
+#filter-by-type {
+    width:45%;
+   }
+   
+   #filter-order-by{
+    width:45%;
+   }
+
+.pokemones-quantity{
+    text-align: center;
+}
 
 
 #container-card{/**contenedor de card*/
