@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
+
   <body>
     <header>
       <nav class="navbar-top">
@@ -21,11 +22,11 @@
       <div id="navbar-logo-box">
            <img id="navbar-logo-img" src="IMG/pokemon-logo.png" alt="Pokemon logo">
       </div>
-  </header>
-      <section class="filters-container">
+    </header>
+      
+    <section class="filters-container">
         <div class="filter-individual-container" id="filter-by-name-number">
           <input type="search" class="filter-item" placeholder= "Search for a Pokemon by name or number">
-
         </div>
         
         <div class="filter-individual-container" id="filter-by-type">
@@ -62,37 +63,38 @@
             <option value="option2">Z-A</option>
             </select>
         </div>
-      </section>
+    </section>
 
-    <main>
-      
-      
-      
-    </main>
+    <main> 
 
-    <div class="pokemones-quantity">
-      <div>
-        <p class="pokemones">Pokemones ( <spam id="quantity"></spam> )</p>
+    <div class="pokemones-main">
+      <div class="pokemones-quantity" >
+        <p>Pokemones ( <spam id="quantity"></spam> )</p>
       </div>
 
       <div id="container-card"></div>  
-     <div class="container-modal"></div>
+      <div class="container-modal"></div>
+
+    </main>
 
     <footer>
-     
       <div class="team">
         <h3 >Developer Team </h3>
-        <div>
-          <p> Elizabeth Lopez</p>
-          <a href="https://github.com/eliza8855"><img src="IMG/github.png"></a>
-        </div>
-        <div>
-          <p> Maribel Maza </p>
-          <a href="https://github.com/mysticBel"><img src="IMG/github.png"></a>
-        </div>
+          <div>
+             <p> Elizabeth Lopez</p>
+             <a href="https://github.com/eliza8855"><img src="IMG/github.png"></a>
+          </div>
+          <div>
+             <p> Maribel Maza </p>
+             <a href="https://github.com/mysticBel"><img src="IMG/github.png"></a>
+          </div>
       </div>
+      <div class="credits">
+        <p> Here goes the credits or other stuff .. </p>
 
+      </div>
     </footer>
+
     <!-- <div id="root"></div> -->
     <script src="main.js" type="module"></script>
   </body>
