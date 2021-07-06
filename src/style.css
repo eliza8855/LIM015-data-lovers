@@ -10,7 +10,8 @@
        align-items: center;
        justify-content: flex-end;
        /* background-color:#D0455F; */
-       background-color:#d14c4c;
+       /* background-color:#d14c4c; */
+       background-color: #4f72a7;
        
    }
    
@@ -30,9 +31,9 @@
         color: rgb(42, 59, 90); 
     } 
    
-   #navbar-logo-box {
+   /* #navbar-logo-box {
      background: linear-gradient(to bottom, #B30828 0%, #B30828 50%, white 50%, white 100%);
-   }
+   } */
    
    #navbar-logo-img{
      display: block;
