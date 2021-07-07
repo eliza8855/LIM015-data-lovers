@@ -43,9 +43,14 @@
      max-width: 400px;
    }
    
+   #poke-banner{
+       width: 100%;
+   }
    
+
+   
+
    /* FILTERS SECTION */
-   
    .filters-container {
        display: flex;
        flex-wrap: wrap;
@@ -135,22 +140,15 @@
     font-size: 1.5em;
     font-weight:500;
     text-align: center;
-    /* background-color:  #575757; */
     border-radius: 0.4em;
     color:rgba(180, 102, 87, 0.829);
     margin: 0.5em;
 }
 .poke-num{
-    /* margin:0;
-    text-align: left;
-    font-size: 1em; */
-    /* background-color:gray;
-    border-radius:10 px; */
     text-transform: capitalize;
     font-size: 1.2em;
     text-align: center;
     background-color:  #97b5d1;
-    /* background-color:  #94979c; */
     border-radius: 0.4em;
     color: white;
     margin: 0.5em  ;
@@ -187,7 +185,7 @@
     display:flex;
     flex-direction: row;
     width:100%;
-    /* justify-content: center; */
+    
 }
 
 #poke-type-icon-box {
@@ -208,8 +206,8 @@
 /* estilos del footer */
 
 footer{
-    background-color:#474141;
-    color: rgb(163, 162, 162);
+    background-color: #4f72a7;
+    color: rgb(233, 232, 232);
     font-family: 'Lato', sans-serif;
     /* margin: 1em auto; */
     display: grid;
@@ -257,7 +255,8 @@ footer .team{
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color:#D0455F;
+      background-color:#4f72a7;
+      color: white;
   }
   
   .filters-container {
@@ -269,7 +268,7 @@ footer .team{
       padding: 6px 7px;
       width: 100px;
       text-align: center;
-      color: black;
+      color: rgb(252, 252, 252);
       text-decoration:none;
       font-weight:500;
       font-size: 4vw;
@@ -304,4 +303,4 @@ footer .team{
         margin: 2em auto;
     }
     
-    }} */
+    } */

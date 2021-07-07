@@ -1,16 +1,13 @@
-// import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-import { filterByName } from './data.js';
+import { filterByName , filterByType  } from './data.js';
 
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
 // const containerModal = document.querySelector('.container-modal');
-// const inputSearch = document.getElementById('search');
-const searchByName = document.querySelector('#inputFilterByName');
+const inputSearch = document.querySelector('#inputFilterByName');
+const elementTypeFilter = document.querySelector('#filterByType-options');
 
-searchByName.addEventListener("keyup", filterByName);
+
 
 const TypePokemon = (arrayType) => {
     let imgEachPokemon = '';
@@ -57,6 +54,47 @@ const showPokemon = (list) => {
 
 
 
+// --------------------filterByName----------
+const MessageError = () => {
+  containerPokemons.innerHTML = '';
+  const div = document.createElement('div');
+  const p = document.createElement('p');
+  const img = document.createElement('img');
+     div.className = 'message-error';
+     p.innerHTML = '🤪⚠️. . . Oopps !! Error 404 Pokemon Not Found!  ';
+     img.src = 'IMG/psyduck-confussed.gif';
+  div.appendChild(p);
+  div.appendChild(img);
+  containerPokemons.appendChild(div);
+};
+
+inputSearch.addEventListener('keyup', () => {
+  const searchedPokemons = filterByName(pokemonList, inputSearch.value);
+  if (searchedPokemons.length === 0) {
+    MessageError();
+    document.getElementById('quantity').innerHTML = 0;
+  } else {
+    containerPokemons.innerHTML = '';
+    showPokemon(searchedPokemons);
+  }
+});
+
+
+
+// --------------filterByType------------
+elementTypeFilter.addEventListener('change', () => {
+  if (elementTypeFilter.value === 'all') {
+    containerPokemons.innerHTML = '';
+    showPokemon(pokemonList);
+  } else {
+    const filteredPokemonsByType = filterByType(pokemonList, elementTypeFilter.value);
+    containerPokemons.innerHTML = '';
+    showPokemon(filteredPokemonsByType);
+  }
+});
+
+
+
   const showModal = (pkm) => {
     const modal = document.createElement('div');
 
@@ -88,12 +126,6 @@ const showPokemon = (list) => {
                                 <p>${pkm.size.weight}</p>
                               </div>
                             </div>
-
-
-
-
-                           
-
                         </div>
                       
                       `;
