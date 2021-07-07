@@ -2,13 +2,15 @@
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
-
+import { filterByName } from './data.js';
 
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
 // const containerModal = document.querySelector('.container-modal');
 // const inputSearch = document.getElementById('search');
+const searchByName = document.querySelector('#inputFilterByName');
 
+searchByName.addEventListener("keyup", filterByName);
 
 const TypePokemon = (arrayType) => {
     let imgEachPokemon = '';
