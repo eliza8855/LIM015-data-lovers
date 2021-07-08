@@ -1,11 +1,14 @@
 import data from './data/pokemon/pokemon.js';
-import { filterByName , filterByType  } from './data.js';
+import { filterByName , filterByType, orderByAtoB} from './data.js';
 
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
 // const containerModal = document.querySelector('.container-modal');
 const inputSearch = document.querySelector('#inputFilterByName');
 const elementTypeFilter = document.querySelector('#filterByType-options');
+const elementOrderAtoZ = document.querySelector('#orderByAToZ')
+
+
 
 
 
@@ -94,6 +97,16 @@ elementTypeFilter.addEventListener('change', () => {
 });
 
 
+elementOrderAtoZ.addEventListener('change', () => {
+  if (elementOrderAtoZ.value === 'A-Z') {
+    containerPokemons.innerHTML = '';
+    showPokemon(orderByAtoB(pokemonList));
+  }
+});
+
+
+
+
 
   const showModal = (pkm) => {
     const modal = document.createElement('div');
@@ -139,4 +152,3 @@ elementTypeFilter.addEventListener('change', () => {
     }
 
 
-// console.log(example, data);
