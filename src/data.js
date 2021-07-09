@@ -1,7 +1,7 @@
 // estas funciones son de ejemplo
 
-// import data from './data/pokemon/pokemon.js';
-// const pokemonList = data.pokemon;
+//import data from './data/pokemon/pokemon.js';
+//const pokemonList = data.pokemon;
 // const searchByName = document.querySelector('#inputFilterByName');
 
 // export const filterByName = () => {
@@ -24,3 +24,11 @@ export const filterByType = (arrayObj, elementType) => {
   const prueba2 = arrayObj.filter((x) => x.type.includes(elementType));
   return prueba2;
 };
+
+export const orderByAtoB = (arrayObj) => {
+  const prueba3 = console.log(arrayObj.sort((a, b) => a.name.localeCompare(b.name)));
+  return prueba3; 
+};
+
+
+
