@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Lovers</title>
+    <title>Pokedex</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
       
     <section class="filters-container">
         <div class="filter-individual-container" id="filter-by-name-number">
-          <input type="search" class="filter-item" id="inputFilterByName" placeholder= "Search for a Pokemon by name or number">
+          <input type="search" class="filter-item" id="inputFilterByName" placeholder= "Search for a Pokemon by name or number"  autocomplete="on" spellcheck="true"/>
         </div>
         
         <div class="filter-individual-container" id="filter-by-type">
@@ -57,21 +57,35 @@
         </div>
 
         <div class="filter-individual-container" id="filter-order-by" >
-            <select class="filter-item" >
-            <option value="">order by...</option>
-            <option value="option1">Lowest Number</option>
-            <option value="option2">Highest Number</option>
-            <option value="option2" id="orderByAToZ">A-Z</option>
-            <option value="option2">Z-A</option>
-            </select>
+          <select id="orderBy-options" class="filter-item" >
+            <option value=""> Order by... </option>
+            <option value="Lowest Number">Lowest Number</option>
+            <option value="Highest Number">Highest Number</option>
+            <option value="A-Z">A-Z</option>
+            <option value="Z-A">Z-A</option>
+          </select>
         </div>
+
+        <div class="filter-individual-container" id="sort-by" >
+          <select id="sort-by-order" class="filter-item" >
+            <option value=""> Sort by... </option>
+            <option value="descendingCp"> Max CP </option>
+            <option value="ascendingCp"> Min CP </option>
+            <option value="descendingHp"> Max HP </option>
+            <option value="ascendingHp"> Min HP </option>
+          </select>
+      </div>
+        <div class="filter-individual-container"  >
+          <button type="button" class="button" id="refresh"> refresh </button>
+        </div>
+
     </section>
 
     <main> 
 
     <div class="pokemones-main">
       <div class="pokemones-quantity" >
-        <p>Pokemones ( <spam id="quantity"></spam> )</p>
+        <p>Results( <spam id="quantity"></spam> )</p>
       </div>
 
       <div id="container-card"></div>  
@@ -92,7 +106,7 @@
           </div>
       </div>
       <div class="credits">
-        <p> Here goes the credits or other stuff .. </p>
+        <p> Here goes the credits or other stuff <br> 3D Pokemon models thanks to projectpokemon.org 😉.. </p>
 
       </div>
     </footer>
