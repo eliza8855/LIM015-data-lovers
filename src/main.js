@@ -122,10 +122,9 @@ const showPokemon = (list) => {
         </div>
         <div id="poke-type-icon-container">${TypePokemon(pokem.type)}</div>
         `;
-  
+      // When the user clicks the card opens the modal
       card.addEventListener('click', () => {
-        const show = showModal(pokem);
-        show.classList.add('modal');
+        openAndCloseModal(pokem)
       });
       count += 1;
       containerPokemons.appendChild(card);
@@ -145,48 +144,50 @@ const showPokemon = (list) => {
 // });
 
 
-//---------------Show modals -------------------
-  const showModal = (pkm) => {
-    const modal = document.createElement('div');
-
-    modal.classList.add('modal');
-    modal.innerHTML = `<div class="modal-flex"> 
-                        <div class="modal-info">
-                           <p class="poke-name-card bold">${pkm.name} N°<spam>${pkm.num}</spam></p>
-                           <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
-                           <p class="about">${pkm.about}</p>
-                           <div>
-                                  <p class="type">Type</p>
-                                  <p>${pkm.type}</p>
-                                </div>                                
-                              </div>
-                           <div class="comun-modal contenido">
-                            
-                                <div>
-                                  <p class="bold">Height</p>
-                                  <p>${pkm.size.height}</p>
-                                </div>                                
-                              </div>
-
-                              
-
-                            <div class="comun-modal contenido">
-                             
-                              <div>
-                                <p class="bold">Weight</p>
-                                <p>${pkm.size.weight}</p>
-                              </div>
+//---------------Function Open Modal-------------------
+  const openAndCloseModal = (pkm) => {
+    const modalpkm = document.createElement('div');
+    modalpkm.classList.add('modal');
+    modalpkm.innerHTML = `<div class="modal-content"> 
+                          <span class="close">&times;</span>
+                          <div class="modal-info">
+                            <p class="poke-name-card bold">${pkm.name} N°<spam>${pkm.num}</spam></p>
+                            <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
+                            <p class="about">${pkm.about}</p>
+                            <div>
+                              <p class="type">Type</p>
+                              <p>${pkm.type}</p>
+                            </div>                                
+                          </div>
+                          <div class="comun-modal contenido">
+                            <div>
+                              <p class="bold">Height</p>
+                              <p>${pkm.size.height}</p>
+                            </div>                                
+                          </div>
+                          <div class="comun-modal contenido">   
+                            <div>
+                              <p class="bold">Weight</p>
+                              <p>${pkm.size.weight}</p>
                             </div>
-                        </div>
-                      
+                          </div>
+                       </div>
                       `;
-    document.querySelector('.container-modal').appendChild(modal);
-  }
-  const modal = document.createElement('div');
-    for (let i=0; i<252; i++){
-        showModal(data.pokemon[i]);
-        modal.style.display = 'hide';
-    }
+    document.querySelector('.container-modal').appendChild(modalpkm);
+    modalpkm.style.display ="block";
+    // detectamos la "x" e indicamos que al hacer clic se desaparezca el modal
+    let closetag = modalpkm.querySelector(".close");
+      closetag.addEventListener("click", () => {
+      modalpkm.style.display = "none";
+      })
+    // indicamos que se cierre el modal al hacer click fuera del modal
+      window.addEventListener ("click", (e) => {
+        if (e.target == modalpkm) {
+          modalpkm.style.display = "none";
+        }
+       })
+    
+    };
 
 
   
