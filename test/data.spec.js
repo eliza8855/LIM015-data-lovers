@@ -1,23 +1,26 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterByName , filterByType } from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js';
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe('filterByName', () => {
+  it('should be a function', () => { 
+    const result = filterByName(data.pokemon,'ivysaur');
+    expect(result[0].name).toBe('ivysaur');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
+it('should be a function', () => { 
+  const result = filterByName(data.pokemon,'ivy');
+  expect(result[0].name).toBe('ivysaur');
+})});
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
+// describe('filterByType', () => {
+//  it('should be a function which filters pokemons by type', () => {
+//    const result = filterByType(data.pokemon , 'poison');
+//    expect(result[0].type).toBe('poison');
+//  })});
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+
+// export const filterByType = (arrayObj, elementType) => {
+//   const resultByType = arrayObj.filter((x) => x.type.includes(elementType));
+//   return resultByType;
+// };
