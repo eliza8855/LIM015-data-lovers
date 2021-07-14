@@ -9,55 +9,26 @@ export const filterByType = (arrayObj, elementType) => {
   return resultByType;
 };
 
-
-
-export const orderByName = (a, b) => {
-  if (a.name < b.name) {
-    return -1;
-  }
-  if (a.name > b.name) {
-    return 1;
-  }
-  return 0;
-}
-
-
-export const orderByNumber = (a, b) => {
-  if (a.num < b.num) {
-    return -1;
-  }
-  if (a.num > b.num) {
-    return 1;
-  }
-  return 0;
-}
-
-//función para ordenar la data según CP
-export const orderByCP = (a, b) => {
-  if (parseInt(a.stats['max-cp']) < parseInt(b.stats['max-cp']))  {
-    return -1;
-  }
-  if (parseInt(a.stats['max-cp']) > parseInt(b.stats['max-cp'])) { 
-    return 1;
-  }
-  return 0;
-}
-
-//función para ordenar la data según HP
-export const orderByHp = (a, b) =>{
-  if (parseInt(a.stats["max-hp"]) < parseInt(b.stats["max-hp"])) {
-    return -1;
-  }
-  if (parseInt(a.stats["max-hp"]) > parseInt(b.stats["max-hp"])) {
-    return 1;
-  }
-  return 0;
-}
-
-
-
 export const pokemonOrder = {
   differentOrder: (everyPokemon, selected) => {
+    const orderByName = (a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    };
+    const orderByNumber = (a, b) => {
+      if (a.num < b.num) {
+        return -1;
+      }
+      if (a.num > b.num) {
+        return 1;
+      }
+      return 0;
+    };
     let result;
     switch(true) {
       case selected === "A-Z":
@@ -77,6 +48,24 @@ export const pokemonOrder = {
     
   },
   sortedByOrder: (everyPokemon,selected) => {
+    const orderByCP = (a, b) => {
+      if (parseInt(a.stats['max-cp']) < parseInt(b.stats['max-cp']))  {
+        return -1;
+      }
+      if (parseInt(a.stats['max-cp']) > parseInt(b.stats['max-cp'])) { 
+        return 1;
+      }
+      return 0;
+    };
+    const orderByHp = (a, b) =>{
+      if (parseInt(a.stats["max-hp"]) < parseInt(b.stats["max-hp"])) {
+        return -1;
+      }
+      if (parseInt(a.stats["max-hp"]) > parseInt(b.stats["max-hp"])) {
+        return 1;
+      }
+      return 0;
+    };
     let result2;
     switch(true) {
       case selected === "ascendingCp":
@@ -95,16 +84,6 @@ export const pokemonOrder = {
   return result2;
     
 }}
-
-
-
-
-
-
-
-
-// estas funciones son de ejemplo
-
 
 
 
