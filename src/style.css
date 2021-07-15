@@ -31,6 +31,15 @@
         color: rgb(42, 59, 90); 
     } 
    
+    #hamburguer {
+        background-color: transparent;
+        color: white; 
+        border: none;
+        font-size: 20px; 
+        cursor: pointer;
+        display: none; 
+    }
+
    /* #navbar-logo-box {
      background: linear-gradient(to bottom, #B30828 0%, #B30828 50%, white 50%, white 100%);
    } */
@@ -47,9 +56,6 @@
        width: 100%;
    }
    
-
-   
-
    /* FILTERS SECTION */
    .filters-container {
        display: flex;
@@ -327,12 +333,12 @@ footer .team{
   @media screen and (max-width:480px) {
    .navbar-top {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      align-items: right;
       background-color:#4f72a7;
       color: white;
   }
   
+
   .filters-container {
       margin:0 auto;
       padding:0 5px;
@@ -346,7 +352,14 @@ footer .team{
       text-decoration:none;
       font-weight:500;
       font-size: 4vw;
+      display: none; 
     }
+
+   #hamburguer {
+      display: flex;
+      padding: 10px;
+    }
+
    #navbar-logo-img {
     width:70%;
     }
