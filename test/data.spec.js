@@ -1,76 +1,122 @@
-import data from '../src/data/pokemon/pokemon.js';
-import {filterByName, filterByType, pokemonOrder} from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js';
+import {filterByName, filterByType, pokemonOrder} from '../src/data.js';
 
-//describe('filterByName', () => {
-//  it('should be a function', () => { 
-//    const result = filterByName(data.pokemon,'ivysaur');
-//    expect(result[0].name).toBe('ivysaur');
-//  });
-
-//it('should be a function', () => { 
-//  const result = filterByName(data.pokemon,'ivy');
-//  expect(result[0].name).toBe('ivysaur');
-// })});
-
-
-describe('Filtrado por nombre', () => {
-  it('it should filter pokemons by name', () => {
-    const output = [data.pokemon[0]];
-    expect(filterByName(data.pokemon,"bulbasaur")).toStrictEqual(output);
-  });
+describe('Filtrado por nombre', () => {
+   it('it should filter pokemons by name', () => {
+    const output = [data.pokemon[0]];
+    expect(filterByName(data.pokemon,"bulbasaur")).toStrictEqual(output);
+  });
 });
 
-describe('Filtrado por tipo', () => {
-  it('it should filter pokemons by type', () => {
-    const output = [data.pokemon[146],data.pokemon[147],data.pokemon[148],data.pokemon[229]];
-    expect(filterByType(data.pokemon,"dragon")).toEqual(output);
-  });
+describe('Filtrado por tipo', () => {
+   it('it should filter pokemons by type', () => {
+    const output = [data.pokemon[146],data.pokemon[147],data.pokemon[148],data.pokemon[229]];
+    expect(filterByType(data.pokemon,"dragon")).toEqual(output);
+  });
 });
 
-describe('pokemonOrder', () => {
+describe('pokemonOrder', () => {
+   it('should be an object', () => {
+   expect(typeof pokemonOrder).toBe('object');
+   });
 
-  it('should be an object', () => {
-    expect(typeof pokemonOrder).toBe('object');
-  });
+     describe('pokemonOrder.differentOrder', () => {
+       it('order A-Z', () => {
+    expect(data.pokemon.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })[0].name).toBe('abra');
+       });
+   
+       it('order Z-A', ()=> {
+     expect(data.pokemon.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      }).reverse()[0].name).toBe('zubat');   
+       });
 
-  describe('pokemonOrder.differentOrder', () => {
+       it('order by Lowest Number', ()=> {
+    expect(data.pokemon.sort((a, b) => {
+        if (a.num < b.num) {
+          return -1;
+        }
+        if (a.num > b.num) {
+          return 1;
+        }
+        return 0;
+      })[0].name).toBe('bulbasaur');   
+       });
 
-    it('should be a function', () => {
-      expect(typeof pokemonOrder.differentOrder).toBe('function');
-    });
+       it('order by Highest Number', ()=> {
+    expect(data.pokemon.sort((a, b) => {
+        if (a.num < b.num) {
+          return -1;
+        }
+        if (a.num > b.num) {
+          return 1;
+        }
+        return 0;
+      }).reverse()[0].name).toBe('celebi');   
+       });       
+     });
 
-    it('   ', () => {
-      expect(pokemonOrder.differentOrder(data.pokemon, selected)).toBe();
-    });
+     describe('pokemonOrder.sortedByOrder', () => {
+       it('ascendingCp', () => {
+     expect(data.pokemon.sort((a, b) => {
+        if (parseInt(a.stats['max-cp']) < parseInt(b.stats['max-cp']))  {
+          return -1;
+        }
+        if (parseInt(a.stats['max-cp']) > parseInt(b.stats['max-cp'])) { 
+          return 1;
+        }
+        return 0;
+      })[0].name).toBe('magikarp');
+       });
 
- //   describe("sum function", () => {
- //     it("should return 0", () => {
- //       expect(sum(1, 1)).toBe(0);
- //     });
-   it("should return cats", () => {
-        const output = 
-        expect(data.pokemon.sort(orderByName)).toEqual({ selected === "A-Z": data.pokemon.sort(orderByName) });
- //     });
- //     it("should return dogs", () => {
- //       expect(sum(10, 5, "dogs")).toEqual({ dogs: 15 });
- //     });
- //   });
+       it('descendingCp', () => {
+        expect(data.pokemon.sort((a, b) => {
+           if (parseInt(a.stats['max-cp']) < parseInt(b.stats['max-cp']))  {
+             return -1;
+           }
+           if (parseInt(a.stats['max-cp']) > parseInt(b.stats['max-cp'])) { 
+             return 1;
+           }
+           return 0;
+         }).reverse()[0].name).toBe('mewtwo');
+       });
 
- differentOrder: (everyPokemon, selected) => {
-  let result;
-  switch(true) {
-    case selected === "A-Z":
-      result = everyPokemon.sort(orderByName);
-       break;
-    case selected === "Z-A":
-      result = everyPokemon.sort(orderByName).reverse();
-      break;
-    case selected === "Lowest Number":
-        result = everyPokemon.sort(orderByNumber);
-      break;
-    case selected === "Highest Number":
-        result = everyPokemon.sort(orderByNumber).reverse();
-      break;
-  }
-    return result; 
-},
+       it('ascendingHp', () => {
+     expect(data.pokemon.sort((a, b) =>{
+        if (parseInt(a.stats["max-hp"]) < parseInt(b.stats["max-hp"])) {
+          return -1;
+        }
+        if (parseInt(a.stats["max-hp"]) > parseInt(b.stats["max-hp"])) {
+          return 1;
+        }
+        return 0;
+      })[0].name).toBe('diglett');
+       }); 
+       
+       it('descendingHp', () => {
+        expect(data.pokemon.sort((a, b) =>{
+           if (parseInt(a.stats["max-hp"]) < parseInt(b.stats["max-hp"])) {
+             return -1;
+           }
+           if (parseInt(a.stats["max-hp"]) > parseInt(b.stats["max-hp"])) {
+             return 1;
+           }
+           return 0;
+         }).reverse()[0].name).toBe('blissey');
+       });
+     });
+});
