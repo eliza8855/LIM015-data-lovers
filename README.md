@@ -12,12 +12,12 @@ Dicho producto sería usado por el ususario antes , durante y después de realiz
 
 
 ## Historia 1 (Beginner)
- _Yo como_ jugador Pokémon GO beginner _quiero_ realizar una **búsqueda** en la pagina **por nombre o número** del
+ _Yo como_ jugador Pokémon GO beginner _quiero_ realizar una **búsqueda** en la pagina **por nombre** del
 pokemón _para_ así acceder mucho más rápido a las características de este.
 
 **_Criterios de Aceptación:_** 
 
-     ☑️  En la interfaz debe estar visible el buscador y dentro un texto "buscar pokemón por nombre o número"
+     ☑️  En la interfaz debe estar visible el buscador y dentro un texto " search pokemon by name"
      ☑️  Al dar click en la barra de busqueda, filtrar los pokemones que contengan las letras que se van colocando.
      ☑️  La pagina debe mostrar el pokemón deseado.
 
@@ -43,19 +43,9 @@ Z-A , _para_ poder tener una visualización ordenada de los 251 Pokemones.
      ☑️  Contar con una opcion desplegable que indique 'ORDENAR' 
      ☑️  Al dar click, se debe mostrar las opciones : A-Z  y  Z-A
      ☑️  Habiendo seleccionado una opción, poder visualizar los pokemones de manera ordenada.
-
-## Historia 4 (Intermediate)
-_Yo como_ maestro pokemon GO intermediate  _quiero_ poder **visualizar** una opcion en la pagina
-sobre el **Top 10 en frecuencia** de aparición de los Pokemones , para tener al alcance dicha información
-cuando desee ir en búsqueda de más pokemones y capturarlos.
-
-**_Criterios de Aceptación:_** 
-
-     ☑️  Contar con una opcion que indique 'TOP 10'
-     ☑️  Al darle click, visualizar los pokemones con mayor frecuencia de aparición.
  
 
-## Historia 5 (Advanced)
+## Historia 4 (Advanced)
 _Yo como_ maestro pokemon GO avanzado _quiero_ saber los principales ataques, movimientos, evolución
  de mis pokemones para poder **definir mi estrategia de batalla** con otros maestros pokemones.
 
@@ -65,15 +55,6 @@ _Yo como_ maestro pokemon GO avanzado _quiero_ saber los principales ataques, mo
      ☑️  Al darle click, aparecerá un modal en donde el usuario podra visualizar  las características
           del Pokemón seleccionado.
 
-## Historia 6 (Advanced)
-_Yo como_ maestro pokemon GO avanzado _quiero_ **filtrar** los principales ataques, movimientos, evolución
- de mis pokemones para poder **definir mi estrategia de batalla** con otros maestros pokemones.
-
-**_Criterios de Aceptación:_** 
-
-     ☑️  Contar con una opción de  'BUSQUEDA AVANZADA' 
-     ☑️  Al darle click, aparecerá un modal en donde el usuario podra filtrar características de acuerdo a sus necesidades.
-     ☑️  Al dar click en 'BUSCAR', visualizar las características del Pokemón seleccionado.
 
 
 
@@ -120,33 +101,33 @@ _Yo como_ maestro pokemon GO avanzado _quiero_ **filtrar** los principales ataqu
 
 ### HTML y CSS
 
-* [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-* [ ] [Uso de selectores de CSS.](https://css-tricks.com/almanac/selectors/)
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
-* [ ] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [✔️] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* [✔️] [Uso de selectores de CSS.](https://css-tricks.com/almanac/selectors/)
+* [✔️] Construir tu aplicación respetando el diseño realizado (maquetación).
+* [✔️] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### DOM y Web APIs
 
-* [ ] [Uso de selectores del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Localizando_elementos_DOM_usando_selectores).
+* [✔️] [Uso de selectores del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Localizando_elementos_DOM_usando_selectores).
 * [ ] [Manejo de eventos del DOM.](https://www.w3schools.com/js/js_events.asp)
 * [ ] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
 (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 
 ### JavaScript
 
-* [ ] Uso de condicionales (if-else | switch | operador ternario)
-* [ ] [Uso de bucles (for | for..in | for..of | while)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Bucles_e_iteraci%C3%B3n)
-* [ ] [Uso de funciones (parámetros | argumentos | valor de retorno)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones)
+* [✔️] Uso de condicionales (if-else | switch | operador ternario)
+* [✔️] [Uso de bucles (for | for..in | for..of | while)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Bucles_e_iteraci%C3%B3n)
+* [✔️] [Uso de funciones (parámetros | argumentos | valor de retorno)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones)
 * [ ] [Manipular arrays (filter | map | sort | reduce)](https://code.tutsplus.com/es/tutorials/how-to-use-map-filter-reduce-in-javascript--cms-26209)
 * [ ] [Manipular objects (key | value)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object)
-* [ ] [Uso ES modules](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/M%C3%B3dulos) ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+* [✔️] [Uso ES modules](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/M%C3%B3dulos) ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
 * [ ] [Diferenciar entre expression y statements.](https://openclassrooms.com/en/courses/4309531-descubre-las-funciones-en-javascript/5108986-diferencia-entre-expresion-y-sentencia)
 * [ ] [Diferenciar entre tipos de datos atómicos y estructurados.](https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures)
 
 ### Testing
 
-* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
+* [✔️] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
 
 ### Estructura del código y guía de estilo
 
@@ -156,15 +137,15 @@ _Yo como_ maestro pokemon GO avanzado _quiero_ **filtrar** los principales ataqu
 
 ### Git y GitHub
 
-* [ ] [Uso de comandos de git (add | commit | pull | status | push)](https://github.com/jlord/git-it-electron)
-* [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages)
+* [✔️] [Uso de comandos de git (add | commit | pull | status | push)](https://github.com/jlord/git-it-electron)
+* [✔️] Manejo de repositorios de GitHub (clone | fork | gh-pages)
 * [ ] Colaboración en Github (branches | pull requests | |[tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
 
 ### UX
 
 * [ ] Diseñar la aplicación pensando y entendiendo al usuario.
 * [ ] Crear prototipos para obtener feedback e iterar.
-* [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
+* [✔️] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 * [ ] Planear y ejecutar tests de usabilidad.
 
 
@@ -175,8 +156,8 @@ _Yo como_ maestro pokemon GO avanzado _quiero_ **filtrar** los principales ataqu
 
 # Checklist 
 
-* [ ] Usa VanillaJS.
-* [ ] No hace uso de `this`.
+* [✔️ ] Usa VanillaJS.
+* [✔️ ] No hace uso de `this`.
 * [ ] Pasa linter (`npm run pretest`)
 * [ ] Pasa tests (`npm test`)
 * [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
@@ -191,9 +172,9 @@ _Yo como_ maestro pokemon GO avanzado _quiero_ **filtrar** los principales ataqu
 * [ ] Incluye link a Zeplin en `README.md`.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
+* [✔️ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [✔️ ] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [✔️ ] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
 
 
