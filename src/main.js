@@ -148,12 +148,45 @@ const showPokemon = (list) => {
   const openAndCloseModal = (pkm) => {
     const modalpkm = document.createElement('div');
     modalpkm.classList.add('modal');
-    modalpkm.innerHTML = `<div class="modal-content"> 
-                          <span class="close">&times;</span>
-                          <div class="modal-info">
-                            <p class="poke-name-card bold">${pkm.name} N°<spam>${pkm.num}</spam></p>
-                            <img class="threeD-IMG" src= "https://projectpokemon.org/images/normal-sprite/${pkm.name}.gif"></img> 
+    modalpkm.innerHTML = `<div class="modal-content">
+                          <div class="modalPart1">
+                              <div class="boxModalClose">
+                                <span class="close">&times;</span>
+                              </div>
+                              <div class="boxModalPokeName">
+                                <p class="modalPokeName">${pkm.name} </p>  
+                              </div>
+                              <div class="boxModalNumAbout">
+                                <div class="divmodalNum"><p id="modalNum">N° ${pkm.num}</p></div>
+                                <div id="modalAbout">About:</div>   
+                              </div>
+                              <div class="boxModalImg">
+                                <img class="modalImg" src="${pkm.img}"></img>   
+                              </div>
+                          </div>
+                          <div class="modalPart2">
                             <p class="about">${pkm.about}</p>
+                            <table>
+                              <tr>
+                                <td colspan="2"> <b>Rarity</b> Normal</td>
+                                <td colspan="2"> <b>Height</b> 0.71 m</td>
+                                <td colspan="2"> <b>Weight</b> 6.9kg </td>
+                              </tr>
+                              <tr>
+                                <td colspan="3"> <b>Type</b> grass, poison</td>
+                                <td colspan="3"> <b>Egg</b> 2km</td>
+                              </tr>
+                              <tr>
+                                <td colspan="6"><b>Resistant:</b></td>
+                              </tr>
+                              <tr>
+                                <td colspan="6"><b>Weaknesses:</b></td>
+                              </tr>
+                            </table>
+                            
+                          </div>
+                          <div class="modal-info">
+                            
                             <div>
                               <p class="type">Type</p>
                               <p>${pkm.type}</p>
