@@ -192,7 +192,6 @@
     color: white;
     margin: 0.5em  ;
     max-width:80px
-    
 
 }
 .poke-img{
@@ -253,7 +252,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding: 10%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -266,24 +265,25 @@
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 0px;
     border: 1px solid #888;
-    max-width: 500px;
+    max-width: 800px;
     min-width: 250px;
     border-radius: 10px;
+    position: relative;
   }
 
+.modal-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 3%;
+}  
 .modalPart1 {
-    background: linear-gradient(0deg, rgba(148,206,185,1) 0%, rgba(177,221,205,1) 20%, rgba(254,255,250,0.9920343137254902) 100%);
-    padding: 0 20px;
+    /*background: linear-gradient(0deg, rgba(148,206,185,1) 0%, rgba(177,221,205,1) 20%, rgba(254,255,250,0.9920343137254902) 100%);*/
+    padding: 0px;
     display:flex;
     flex-wrap: wrap;
     border-radius: 10px 10px 0px 10px;
 }  
-
-.boxModalClose {
-    width:100%;    
-}
 
 .boxModalPokeName {
     width:100%;
@@ -292,7 +292,7 @@
 .modalPokeName {
     text-align: center;
     font-weight: bold;
-    font-size: 3.5vw;
+    font-size: 24px;
     text-transform: capitalize;
 
 }
@@ -328,30 +328,47 @@
     margin:0 0 -25px 0;
 }
 
-table, th, td {
-    border: 1px solid black;
-  }
+.subtitleModal {
+    font-size:16px;
+    font-weight: bold;
+    padding: 5px;
+}
 
-.gridInfoPokemons {
+.modalPart2 {
+    text-align: center;
+    font-size: 14px; 
+}
+.gridGeneralFormat {
     display:grid;
-    grid-template-columns: repeat(6,1fr);
     grid-gap:3px;
     grid-auto-rows:auto;
     margin:5px 10px;
+    text-align: center;
+    font-size: 14px; 
 }
 
-.gridInfoPokemons > div {
+#gridInfoPokemons {
+    grid-template-columns: repeat(6,1fr);
+}
+
+#gridStatPokemons1 {
+    grid-template-columns: repeat(5,1fr);
+}
+
+#gridStatPokemons2 {
+    grid-template-columns: repeat(4,1fr); 
+}
+.about {
+    padding:15px 10px 10px 10px;
+ }
+
+.gridGeneralFormat > div {
    background:#eee;
    padding:3px;
-   text-align: center;
 }
 
-.about {
-   padding:15px 10px 10px 10px;
-}
-
-.gridElementInfoPokemons > h2 {
-    font-size:14px;
+.gridElementPokemons > h2 {
+    font-size:12px;
 }
 
 #grid1 {
@@ -376,13 +393,22 @@ table, th, td {
     grid-column:1/7;
 }
 
+
+
+
 /* The Close Button */
+
+.boxModalClose {
+    position: absolute;
+    top:2px;
+    right:10px;
+}
+
 .close {
     color: #aaaaaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
   .close:hover,
   .close:focus {
@@ -390,6 +416,8 @@ table, th, td {
     text-decoration: none;
     cursor: pointer;
   }
+
+
 
 /* estilos del footer */
 

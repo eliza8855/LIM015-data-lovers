@@ -148,57 +148,150 @@ const showPokemon = (list) => {
   const openAndCloseModal = (pkm) => {
     const modalpkm = document.createElement('div');
     modalpkm.classList.add('modal');
-    modalpkm.innerHTML = `<div class="modal-content">
-                          <div class="modalPart1">
+    modalpkm.innerHTML = `  <div class="modal-content">
                               <div class="boxModalClose">
                                 <span class="close">&times;</span>
-                              </div>
-                              <div class="boxModalPokeName">
-                                <p class="modalPokeName">${pkm.name} </p>  
-                              </div>
-                              <div class="boxModalNumAbout">
-                                <div class="divmodalNum"><p id="modalNum">N° ${pkm.num}</p></div>
-                                <div id="modalAbout">About:</div>   
-                              </div>
-                              <div class="boxModalImg">
-                                <img class="modalImg" src="${pkm.img}"></img>   
-                              </div>
-                          </div>
-                          <div class="modalPart2">
-                              <p class="about">${pkm.about}</p>
-                              <div class="gridInfoPokemons">
-                                 <div class="gridElementInfoPokemons" id="grid1">
-                                    <h2>Rarity</h2>
-                                    <p>${pkm.rarity}</p>
-                                 </div>
-                                 <div class="gridElementInfoPokemons" id="grid2">
-                                    <h2>Height</h2>
-                                    <p>${pkm.size.height}</p>
-                                 </div>
-                                 <div class="gridElementInfoPokemons" id="grid3">
-                                    <h2>Weight</h2>
-                                    <p>${pkm.size.weight}</p>
-                                 </div>
-                                 <div class="gridElementInfoPokemons" id="grid4">
-                                    <h2>Type</h2>
-                                    <p>${pkm.type}</p>
-                                 </div>
-                                 <div class="gridElementInfoPokemons" id="grid5">
-                                    <h2>Egg</h2>
-                                    <p>${pkm.egg}</p>
-                                 </div>
-                                 <div class="gridElementInfoPokemons" id="grid6">
-                                    <h2>Resistant</h2>
-                                    <p>${pkm.resistant}</p>
-                                 </div>
-                                 <div class="gridElementInfoPokemons" id="grid7">
-                                    <h2>Weaknesses</h2>
-                                    <p>${pkm.weaknesses}</p>
-                                 </div>
-                              </div>
+                              </div> 
+                              <div class="modal-content-grid">
+                                <div class="modal-content-left">  
+                                   <div class="modalPart1">
+                                       <div class="boxModalPokeName">
+                                         <p class="modalPokeName">${pkm.name} </p>  
+                                       </div>
+                                       <div class="boxModalNumAbout">
+                                         <div class="divmodalNum"><p id="modalNum">N° ${pkm.num}</p></div>
+                                         <div class="subtitleModal" id="modalAbout">About:</div>   
+                                       </div>
+                                       <div class="boxModalImg">
+                                         <img class="modalImg" src="${pkm.img}"></img>   
+                                       </div>
+                                   </div>
+                                   <div class="modalPart2">
+                                       <p class="about">${pkm.about}</p>
+                                       <div class="gridGeneralFormat" id="gridInfoPokemons">
+                                          <div class="gridElementPokemons" id="grid1">
+                                             <h2>Rarity</h2>
+                                             <p>${pkm.rarity}</p>
+                                          </div>
+                                          <div class="gridElementPokemons" id="grid2">
+                                             <h2>Height</h2>
+                                             <p>${pkm.size.height}</p>
+                                          </div>
+                                          <div class="gridElementPokemons" id="grid3">
+                                             <h2>Weight</h2>
+                                             <p>${pkm.size.weight}</p>
+                                          </div>
+                                          <div class="gridElementPokemons" id="grid4">
+                                             <h2>Type</h2>
+                                             <p>${pkm.type}</p>
+                                          </div>
+                                          <div class="gridElementPokemons" id="grid5">
+                                             <h2>Egg</h2>
+                                             <p>${pkm.egg}</p>
+                                          </div>
+                                          <div class="gridElementPokemons" id="grid6">
+                                             <h2>Resistant</h2>
+                                             <p>${pkm.resistant}</p>
+                                          </div>
+                                          <div class="gridElementPokemons" id="grid7">
+                                             <h2>Weaknesses</h2>
+                                             <p>${pkm.weaknesses}</p>
+                                          </div>
+                                       </div>
+                                   </div>
+                                </div>
+                                <div class="modal-content-right">
+                                    <h2 class="subtitleModal">Stats:</h2>
+                                    <div class="gridGeneralFormat" id="gridStatPokemons1">
+                                    <div class="gridElementPokemons">
+                                       <h2>Max HP</h2>
+                             
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                       <h2>Max CP</h2>
+                               
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                       <h2>Base Attack</h2>
+                                 
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                       <h2>Base Defense</h2>
+                                 
+                                    </div>
+                                    <div class="gridElementPokemons" >
+                                       <h2>Base Stamina</h2>
+                               
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                  
+                                       <p>${pkm.stats['max-hp']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                 
+                                       <p>${pkm.stats['max-cp']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                  
+                                       <p>${pkm.stats['base-attack']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                     
+                                       <p>${pkm.stats['base-defense']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons" >
+                                 
+                                       <p>${pkm.stats['base-stamina']}</p>
+                                    </div>                                   
 
-                          </div>
-                          
+                                    <div class="gridGeneralFormat" id="gridStatPokemons2">
+                                    <div class="gridElementPokemons">
+                                       <h2>QUICK MOVE</h2>
+                             
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                       <h2>Name</h2>
+                               
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                       <h2>DPS</h2>
+                                 
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                       <h2>EPS</h2>
+                                 
+                                    </div>
+                                    <div class="gridElementPokemons" >
+                                       <h2>STAB</h2>
+                                    </div>
+                                    
+                                    <div class="gridElementPokemons">
+                                  
+                                       <p>${pkm.stats['max-hp']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                 
+                                       <p>${pkm.stats['max-cp']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                  
+                                       <p>${pkm.stats['base-attack']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons">
+                                     
+                                       <p>${pkm.stats['base-defense']}</p>
+                                    </div>
+                                    <div class="gridElementPokemons" >
+                                 
+                                       <p>${pkm.stats['base-stamina']}</p>
+                                    </div>                                   
+
+                                 </div>
+                                       
+
+
+                               </div>
+                            </div>    
                        </div>
                       `;
     document.querySelector('.container-modal').appendChild(modalpkm);
