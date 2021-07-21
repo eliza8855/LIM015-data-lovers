@@ -311,4 +311,22 @@ const showPokemon = (list) => {
     };
 
 
-  
+  // ----extra info del modal --------
+//   <div>
+//   <p class="type">Type</p>
+//   <p>${pkm.type}</p>
+// </div>                                
+// </div>
+// <div class="comun-modal contenido">
+// <div>
+//   <p class="bold">Height</p>
+//   <p>${pkm.size.height}</p>
+// </div>                                
+// </div>
+// <div class="comun-modal contenido">   
+// <div>
+//   <p class="bold">Weight</p>
+//   <p>${pkm.size.weight}</p>
+// </div>
+// </div>
+// </div>
