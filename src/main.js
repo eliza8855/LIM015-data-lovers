@@ -165,55 +165,40 @@ const showPokemon = (list) => {
                               </div>
                           </div>
                           <div class="modalPart2">
-                            <p class="about">${pkm.about}</p>
-                            <table>
-                              <tr>
-                                <td colspan="2"> <b>Rarity</b> Normal</td>
-                                <td colspan="2"> <b>Height</b> 0.71 m</td>
-                                <td colspan="2"> <b>Weight</b> 6.9kg </td>
-                              </tr>
-                              <tr>
-                                <td colspan="3"> <b>Type</b> grass, poison</td>
-                                <td colspan="3"> <b>Egg</b> 2km</td>
-                              </tr>
-                              <tr>
-                                <td colspan="6"><b>Resistant:</b></td>
-                              </tr>
-                              <tr>
-                                <td colspan="6"><b>Weaknesses:</b></td>
-                              </tr>
-                            </table>
-                             
-                              <div class="grid">
-                                 <div class="grid1">1</div>
-                                 <div class="grid2">2</div>
-                                 <div class="grid3">3</div>
-                                 <div class="grid4">4</div>
-                                 <div class="grid5">5</div>
-                                 <div class="grid6">6</div>
-                                 <div class="grid7">7</div>
+                              <p class="about">${pkm.about}</p>
+                              <div class="gridInfoPokemons">
+                                 <div class="gridElementInfoPokemons" id="grid1">
+                                    <h2>Rarity</h2>
+                                    <p>${pkm.rarity}</p>
+                                 </div>
+                                 <div class="gridElementInfoPokemons" id="grid2">
+                                    <h2>Height</h2>
+                                    <p>${pkm.size.height}</p>
+                                 </div>
+                                 <div class="gridElementInfoPokemons" id="grid3">
+                                    <h2>Weight</h2>
+                                    <p>${pkm.size.weight}</p>
+                                 </div>
+                                 <div class="gridElementInfoPokemons" id="grid4">
+                                    <h2>Type</h2>
+                                    <p>${pkm.type}</p>
+                                 </div>
+                                 <div class="gridElementInfoPokemons" id="grid5">
+                                    <h2>Egg</h2>
+                                    <p>${pkm.egg}</p>
+                                 </div>
+                                 <div class="gridElementInfoPokemons" id="grid6">
+                                    <h2>Resistant</h2>
+                                    <p>${pkm.resistant}</p>
+                                 </div>
+                                 <div class="gridElementInfoPokemons" id="grid7">
+                                    <h2>Weaknesses</h2>
+                                    <p>${pkm.weaknesses}</p>
+                                 </div>
                               </div>
 
                           </div>
-                          <div class="modal-info">
-                            
-                            <div>
-                              <p class="type">Type</p>
-                              <p>${pkm.type}</p>
-                            </div>                                
-                          </div>
-                          <div class="comun-modal contenido">
-                            <div>
-                              <p class="bold">Height</p>
-                              <p>${pkm.size.height}</p>
-                            </div>                                
-                          </div>
-                          <div class="comun-modal contenido">   
-                            <div>
-                              <p class="bold">Weight</p>
-                              <p>${pkm.size.weight}</p>
-                            </div>
-                          </div>
+                          
                        </div>
                       `;
     document.querySelector('.container-modal').appendChild(modalpkm);
@@ -229,7 +214,7 @@ const showPokemon = (list) => {
           modalpkm.style.display = "none";
         }
        })
-    
+
     };
 
 
