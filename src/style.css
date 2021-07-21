@@ -290,8 +290,9 @@
 .modalPokeName {
     text-align: center;
     font-weight: bold;
-    font-size: 3.5vw;
+    font-size: 2vw;
     text-transform: capitalize;
+    color: rgb(16, 129, 101);
 
 }
 .boxModalNumAbout {
@@ -327,7 +328,10 @@
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid rgba(99, 175, 169, 0.541);
+    background-color: rgba(202, 245, 241, 0.541);
+    margin: auto;
+    text-align: justify;
   }
 
 .grid {

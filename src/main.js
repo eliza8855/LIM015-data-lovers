@@ -185,9 +185,9 @@ const showPokemon = (list) => {
                             </table>
                              
                               <div class="grid">
-                                 <div class="grid1">1</div>
-                                 <div class="grid2">2</div>
-                                 <div class="grid3">3</div>
+                                 <div class="grid1">${pkm.size.height}</div>
+                                 <div class="grid2">${pkm.size.weight}</div>
+                                 <div class="grid3">${pkm.egg}</div>
                                  <div class="grid4">4</div>
                                  <div class="grid5">5</div>
                                  <div class="grid6">6</div>
@@ -195,25 +195,7 @@ const showPokemon = (list) => {
                               </div>
 
                           </div>
-                          <div class="modal-info">
-                            
-                            <div>
-                              <p class="type">Type</p>
-                              <p>${pkm.type}</p>
-                            </div>                                
-                          </div>
-                          <div class="comun-modal contenido">
-                            <div>
-                              <p class="bold">Height</p>
-                              <p>${pkm.size.height}</p>
-                            </div>                                
-                          </div>
-                          <div class="comun-modal contenido">   
-                            <div>
-                              <p class="bold">Weight</p>
-                              <p>${pkm.size.weight}</p>
-                            </div>
-                          </div>
+                      
                        </div>
                       `;
     document.querySelector('.container-modal').appendChild(modalpkm);
@@ -233,4 +215,22 @@ const showPokemon = (list) => {
     };
 
 
-  
+  // ----extra info del modal --------
+//   <div>
+//   <p class="type">Type</p>
+//   <p>${pkm.type}</p>
+// </div>                                
+// </div>
+// <div class="comun-modal contenido">
+// <div>
+//   <p class="bold">Height</p>
+//   <p>${pkm.size.height}</p>
+// </div>                                
+// </div>
+// <div class="comun-modal contenido">   
+// <div>
+//   <p class="bold">Weight</p>
+//   <p>${pkm.size.weight}</p>
+// </div>
+// </div>
+// </div>
