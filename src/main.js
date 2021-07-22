@@ -1,5 +1,5 @@
 import data from './data/pokemon/pokemon.js';
-import { filterByName , filterByType, pokemonOrder} from './data.js';
+import { filterByName , filterByType, pokemonOrder,attackName ,calculateDmgStab ,calculateDps,calculateEps } from './data.js';
 
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
@@ -100,6 +100,14 @@ const TypePokemon = (arrayType) => {
     });
     return imgEachPokemon;
   };
+
+ const TypePokemonLabels = (arrayType) => {
+    let labelEachPokemon = '';
+    arrayType.forEach((typeElement) => {
+      labelEachPokemon += `<div id="poke-type-label-box"><img id="poke-type-label"src="type-labels/${typeElement}.png" alt=" type pokemon labels"/><div>`;  
+    });
+    return labelEachPokemon;
+  };
  
 
 const showPokemon = (list) => {
@@ -183,7 +191,7 @@ const showPokemon = (list) => {
                                           </div>
                                           <div class="gridElementPokemons" id="grid4">
                                              <h2>Type</h2>
-                                             <p>${pkm.type}</p>
+                                             <p>${TypePokemonLabels(pkm.type)}</p>
                                           </div>
                                           <div class="gridElementPokemons" id="grid5">
                                              <h2>Egg</h2>
@@ -191,18 +199,18 @@ const showPokemon = (list) => {
                                           </div>
                                           <div class="gridElementPokemons" id="grid6">
                                              <h2>Resistant</h2>
-                                             <p>${pkm.resistant}</p>
+                                             <p>${TypePokemonLabels(pkm.resistant)}</p>
                                           </div>
                                           <div class="gridElementPokemons" id="grid7">
                                              <h2>Weaknesses</h2>
-                                             <p>${pkm.weaknesses}</p>
+                                             <p>${TypePokemonLabels(pkm.weaknesses)}</p>
                                           </div>
                                        </div>
                                    </div>
                                 </div>
                                 <div class="modal-content-right">
                                     <h2 class="subtitleModal">Stats:</h2>
-                                    <div class="gridGeneralFormat" id="gridStatPokemons1">
+                                  <div class="gridGeneralFormat" id="gridStatPokemons1">
                                     <div class="gridElementPokemons">
                                        <h2>Max HP</h2>
                              
@@ -242,55 +250,39 @@ const showPokemon = (list) => {
                                     <div class="gridElementPokemons" >
                                  
                                        <p>${pkm.stats['base-stamina']}</p>
-                                    </div>                                   
-
-                                    <div class="gridGeneralFormat" id="gridStatPokemons2">
-                                    <div class="gridElementPokemons">
-                                       <h2>QUICK MOVE</h2>
-                             
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                       <h2>Name</h2>
-                               
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                       <h2>DPS</h2>
-                                 
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                       <h2>EPS</h2>
-                                 
-                                    </div>
-                                    <div class="gridElementPokemons" >
-                                       <h2>STAB</h2>
-                                    </div>
-                                    
-                                    <div class="gridElementPokemons">
-                                  
-                                       <p>${pkm.stats['max-hp']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                 
-                                       <p>${pkm.stats['max-cp']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                  
-                                       <p>${pkm.stats['base-attack']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                     
-                                       <p>${pkm.stats['base-defense']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons" >
-                                 
-                                       <p>${pkm.stats['base-stamina']}</p>
-                                    </div>                                   
-
-                                 </div>
+                                    </div>                                         
+                         
                                        
+                                 </div>
+                               <p>hola</p>
+                                <table>
+                                 <tr><td class='tittleAttack' colspan="${(attackName(pkm['quick-move'])).length+1}.">QUICK MOVE</td></tr>
+                                 <tr><td>Name </td>${showTable(attackName(pkm['quick-move']))   }</tr>
+                                 <tr><td>DPS  </td> ${showTable(calculateDps(pkm['quick-move'], pkm.type))}</tr>
+                                 <tr><td>EPS  </td> ${showTable(calculateEps(pkm['quick-move']))}</tr>
+                                 <tr><td>STAB  </td> ${showTable(calculateDmgStab(pkm['quick-move'], pkm.type))}</tr>                          
+                               </table>
 
 
+                               <table>
+                                 <tr><td class='tittleAttack' colspan="${(attackName(pkm['special-attack'])).length+1}.">SPECIAL ATTACK</td></tr>
+                                 <tr><td>Name  </td>${showTable(attackName(pkm['special-attack']))}</tr> 
+                                 <tr><td>DPS  </td> ${showTable(calculateDps(pkm['special-attack'], pkm.type))}</tr>
+                                 <tr><td>EPS  </td> ${showTable(calculateEps(pkm['special-attack']))}</tr>
+                                 <tr><td>STAB  </td> ${showTable(calculateDmgStab(pkm['special-attack'], pkm.type))}</tr>
+                               </table>
+
+
+                               <section class="evolutions">
+                               <div class="title-ev">
+                                 <h5>Evolutions & Pre-evolutions</h5>
                                </div>
+                               <div class="body-ev">${showImgEvolution(pkm.evolution)}
+                               </div> 
+                               </section>
+
+
+                            
                             </div>    
                        </div>
                       `;
@@ -310,6 +302,60 @@ const showPokemon = (list) => {
 
     };
 
+
+    function showTable(data) {
+      const table = data.map(elemento => {
+        return `<td>${elemento}</td>`
+      }).join('');
+      return table;}
+
+
+   // Show evolutions 
+const showImgEvolution = (element) => {
+  let imagEvolution = "";
+
+  if (element["next-evolution"] !== undefined) {
+    element["next-evolution"].forEach((x) => {
+      const nextEvolution_1 = pokemonList.find((item) => item.name === x.name);
+      if (nextEvolution_1 !== undefined) {
+        imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${nextEvolution_1.num}.png"><p>${nextEvolution_1.name}</p><p>Nº ${nextEvolution_1.num}</p>`;
+      }
+      if (element["next-evolution"][0]["next-evolution"] !== undefined) {
+        element["next-evolution"][0]["next-evolution"].forEach((y) => {
+          const nextEvolution_2 = pokemonList.find((item) => item.name === y.name);
+          if (nextEvolution_2 !== undefined) {
+            imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${nextEvolution_2.num}.png"><p>${nextEvolution_2.name}</p><p>Nº ${nextEvolution_2.num}</p> `;
+            
+          }
+        });
+      }
+    });
+  }
+  if (element["prev-evolution"] !== undefined) {
+    element["prev-evolution"].forEach((x) => {
+      const preEvolution_1 = pokemonList.find((item) => item.name === x.name);
+      if (preEvolution_1 !== undefined) {
+        imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${preEvolution_1.num}.png"><p>${preEvolution_1.name}</p><p>Nº ${preEvolution_1.num}</p>`;
+      }
+    });
+    if (element["prev-evolution"][0]["prev-evolution"] !== undefined) {
+      element["prev-evolution"][0]["prev-evolution"].forEach((y) => {
+        const preEvolution_2 = pokemonList.find((item) => item.name === y.name);
+        if (preEvolution_2 !== undefined) {
+          imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${preEvolution_2.num}.png""><p>${preEvolution_2.name}</p><p>Nº ${preEvolution_2.num}</p>`;
+        }
+      });
+    }
+  }
+  return  imagEvolution;
+};
+
+
+
+
+
+
+ 
 
   // ----extra info del modal --------
 //   <div>
