@@ -100,6 +100,14 @@ const TypePokemon = (arrayType) => {
     });
     return imgEachPokemon;
   };
+
+ const TypePokemonLabels = (arrayType) => {
+    let labelEachPokemon = '';
+    arrayType.forEach((typeElement) => {
+      labelEachPokemon += `<div id="poke-type-label-box"><img id="poke-type-label"src="type-labels/${typeElement}.png" alt=" type pokemon labels"/><div>`;  
+    });
+    return labelEachPokemon;
+  };
  
 
 const showPokemon = (list) => {
@@ -183,7 +191,7 @@ const showPokemon = (list) => {
                                           </div>
                                           <div class="gridElementPokemons" id="grid4">
                                              <h2>Type</h2>
-                                             <p>${pkm.type}</p>
+                                             <p>${TypePokemonLabels(pkm.type)}</p>
                                           </div>
                                           <div class="gridElementPokemons" id="grid5">
                                              <h2>Egg</h2>
@@ -191,11 +199,11 @@ const showPokemon = (list) => {
                                           </div>
                                           <div class="gridElementPokemons" id="grid6">
                                              <h2>Resistant</h2>
-                                             <p>${pkm.resistant}</p>
+                                             <p>${TypePokemonLabels(pkm.resistant)}</p>
                                           </div>
                                           <div class="gridElementPokemons" id="grid7">
                                              <h2>Weaknesses</h2>
-                                             <p>${pkm.weaknesses}</p>
+                                             <p>${TypePokemonLabels(pkm.weaknesses)}</p>
                                           </div>
                                        </div>
                                    </div>
@@ -265,6 +273,15 @@ const showPokemon = (list) => {
                                </table>
 
 
+                               <section class="evolutions">
+                               <div class="title-ev">
+                                 <h5>Evolutions & Pre-evolutions</h5>
+                               </div>
+                               <div class="body-ev">${showImgEvolution(pkm.evolution)}
+                               </div> 
+                               </section>
+
+
                             
                             </div>    
                        </div>
@@ -291,6 +308,49 @@ const showPokemon = (list) => {
         return `<td>${elemento}</td>`
       }).join('');
       return table;}
+
+
+   // Show evolutions 
+const showImgEvolution = (element) => {
+  let imagEvolution = "";
+
+  if (element["next-evolution"] !== undefined) {
+    element["next-evolution"].forEach((x) => {
+      const nextEvolution_1 = pokemonList.find((item) => item.name === x.name);
+      if (nextEvolution_1 !== undefined) {
+        imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${nextEvolution_1.num}.png"><p>${nextEvolution_1.name}</p><p>Nº ${nextEvolution_1.num}</p>`;
+      }
+      if (element["next-evolution"][0]["next-evolution"] !== undefined) {
+        element["next-evolution"][0]["next-evolution"].forEach((y) => {
+          const nextEvolution_2 = pokemonList.find((item) => item.name === y.name);
+          if (nextEvolution_2 !== undefined) {
+            imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${nextEvolution_2.num}.png"><p>${nextEvolution_2.name}</p><p>Nº ${nextEvolution_2.num}</p> `;
+            
+          }
+        });
+      }
+    });
+  }
+  if (element["prev-evolution"] !== undefined) {
+    element["prev-evolution"].forEach((x) => {
+      const preEvolution_1 = pokemonList.find((item) => item.name === x.name);
+      if (preEvolution_1 !== undefined) {
+        imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${preEvolution_1.num}.png"><p>${preEvolution_1.name}</p><p>Nº ${preEvolution_1.num}</p>`;
+      }
+    });
+    if (element["prev-evolution"][0]["prev-evolution"] !== undefined) {
+      element["prev-evolution"][0]["prev-evolution"].forEach((y) => {
+        const preEvolution_2 = pokemonList.find((item) => item.name === y.name);
+        if (preEvolution_2 !== undefined) {
+          imagEvolution += `<img src="https://www.serebii.net/pokemongo/pokemon/${preEvolution_2.num}.png""><p>${preEvolution_2.name}</p><p>Nº ${preEvolution_2.num}</p>`;
+        }
+      });
+    }
+  }
+  return  imagEvolution;
+};
+
+
 
 
 
