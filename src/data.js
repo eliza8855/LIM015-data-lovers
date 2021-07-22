@@ -85,6 +85,61 @@ export const pokemonOrder = {
     
 }}
 
+export const attackName = (attack) => {
+  const name = attack.map(name => name.name);
+  return name;
+};
+
+export const calculateDmgStab = (specialAttack, typePokemon) => {
+  const result = specialAttack.map((obj) => {
+    let stab = 0;
+    const damage = Number(obj['base-damage']); 
+    if (typePokemon.includes(obj.type)) {
+      stab = ((damage * 0.5)); 
+    }    
+    return Number((stab + damage))
+  });
+  return result  
+}; 
+
+export const calculateDps = (specialAttack, pokemonType) => {
+  const result = specialAttack.map((obj) => {
+    let stab = 0;
+
+    const attackType = obj.type;
+    const baseDamage = Number(obj['base-damage']);
+    const attackDuration = Number(obj['move-duration-seg']);
+ 
+    if (pokemonType.includes(attackType)) {
+       stab = Number((baseDamage * 0.5)) ; 
+    }
+
+    return Math.round(((stab + baseDamage) / attackDuration)); 
+  });
+  return result  
+};
+
+export const calculateEps = (specialAttack) => {
+
+  const result = specialAttack.map((obj) => {
+    const moveDuration = Number(obj['move-duration-seg']); 
+    const energy = Number(obj.energy);
+
+    return Math.round(energy / moveDuration); 
+  });
+  return result   
+};
+
+
+
+
+
+
+
+
+
+
+
 
 
 //import data from './data/pokemon/pokemon.js';

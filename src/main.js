@@ -1,5 +1,5 @@
 import data from './data/pokemon/pokemon.js';
-import { filterByName , filterByType, pokemonOrder} from './data.js';
+import { filterByName , filterByType, pokemonOrder,attackName ,calculateDmgStab ,calculateDps,calculateEps } from './data.js';
 
 const pokemonList = data.pokemon;
 const containerPokemons = document.getElementById('container-card');
@@ -202,7 +202,7 @@ const showPokemon = (list) => {
                                 </div>
                                 <div class="modal-content-right">
                                     <h2 class="subtitleModal">Stats:</h2>
-                                    <div class="gridGeneralFormat" id="gridStatPokemons1">
+                                  <div class="gridGeneralFormat" id="gridStatPokemons1">
                                     <div class="gridElementPokemons">
                                        <h2>Max HP</h2>
                              
@@ -242,55 +242,30 @@ const showPokemon = (list) => {
                                     <div class="gridElementPokemons" >
                                  
                                        <p>${pkm.stats['base-stamina']}</p>
-                                    </div>                                   
-
-                                    <div class="gridGeneralFormat" id="gridStatPokemons2">
-                                    <div class="gridElementPokemons">
-                                       <h2>QUICK MOVE</h2>
-                             
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                       <h2>Name</h2>
-                               
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                       <h2>DPS</h2>
-                                 
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                       <h2>EPS</h2>
-                                 
-                                    </div>
-                                    <div class="gridElementPokemons" >
-                                       <h2>STAB</h2>
-                                    </div>
-                                    
-                                    <div class="gridElementPokemons">
-                                  
-                                       <p>${pkm.stats['max-hp']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                 
-                                       <p>${pkm.stats['max-cp']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                  
-                                       <p>${pkm.stats['base-attack']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons">
-                                     
-                                       <p>${pkm.stats['base-defense']}</p>
-                                    </div>
-                                    <div class="gridElementPokemons" >
-                                 
-                                       <p>${pkm.stats['base-stamina']}</p>
-                                    </div>                                   
-
-                                 </div>
+                                    </div>                                         
+                         
                                        
+                                 </div>
+                               <p>hola</p>
+                                <table>
+                                 <tr><td class='tittleAttack' colspan="${(attackName(pkm['quick-move'])).length+1}.">QUICK MOVE</td></tr>
+                                 <tr><td>Name </td>${showTable(attackName(pkm['quick-move']))   }</tr>
+                                 <tr><td>DPS  </td> ${showTable(calculateDps(pkm['quick-move'], pkm.type))}</tr>
+                                 <tr><td>EPS  </td> ${showTable(calculateEps(pkm['quick-move']))}</tr>
+                                 <tr><td>STAB  </td> ${showTable(calculateDmgStab(pkm['quick-move'], pkm.type))}</tr>                          
+                               </table>
 
 
-                               </div>
+                               <table>
+                                 <tr><td class='tittleAttack' colspan="${(attackName(pkm['special-attack'])).length+1}.">SPECIAL ATTACK</td></tr>
+                                 <tr><td>Name  </td>${showTable(attackName(pkm['special-attack']))}</tr> 
+                                 <tr><td>DPS  </td> ${showTable(calculateDps(pkm['special-attack'], pkm.type))}</tr>
+                                 <tr><td>EPS  </td> ${showTable(calculateEps(pkm['special-attack']))}</tr>
+                                 <tr><td>STAB  </td> ${showTable(calculateDmgStab(pkm['special-attack'], pkm.type))}</tr>
+                               </table>
+
+
+                            
                             </div>    
                        </div>
                       `;
@@ -310,6 +285,17 @@ const showPokemon = (list) => {
 
     };
 
+
+    function showTable(data) {
+      const table = data.map(elemento => {
+        return `<td>${elemento}</td>`
+      }).join('');
+      return table;}
+
+
+
+
+ 
 
   // ----extra info del modal --------
 //   <div>
