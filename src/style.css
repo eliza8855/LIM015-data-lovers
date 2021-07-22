@@ -192,7 +192,6 @@
     color: white;
     margin: 0.5em  ;
     max-width:80px
-    
 
 }
 .poke-img{
@@ -253,7 +252,7 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding: 10%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -266,22 +265,25 @@
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 0px;
     border: 1px solid #888;
-    max-width: 500px;
+    max-width: 800px;
     min-width: 250px;
+    border-radius: 10px;
+    position: relative;
   }
 
+.modal-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 3%;
+}  
 .modalPart1 {
-    background: linear-gradient(0deg, rgba(148,206,185,1) 0%, rgba(177,221,205,1) 20%, rgba(254,255,250,0.9920343137254902) 100%);
-    padding: 0 20px;
+    /*background: linear-gradient(0deg, rgba(148,206,185,1) 0%, rgba(177,221,205,1) 20%, rgba(254,255,250,0.9920343137254902) 100%);*/
+    padding: 0px;
     display:flex;
     flex-wrap: wrap;
+    border-radius: 10px 10px 0px 10px;
 }  
-
-.boxModalClose {
-    width:100%;    
-}
 
 .boxModalPokeName {
     width:100%;
@@ -290,7 +292,11 @@
 .modalPokeName {
     text-align: center;
     font-weight: bold;
+<<<<<<< HEAD
+    font-size: 24px;
+=======
     font-size: 2vw;
+>>>>>>> c5ee7e2c54c7847e284b0a897af57be6d16402c7
     text-transform: capitalize;
     color: rgb(16, 129, 101);
 
@@ -327,57 +333,87 @@
     margin:0 0 -25px 0;
 }
 
-table, th, td {
-    border: 1px solid rgba(99, 175, 169, 0.541);
-    background-color: rgba(202, 245, 241, 0.541);
-    margin: auto;
-    text-align: justify;
-  }
+.subtitleModal {
+    font-size:16px;
+    font-weight: bold;
+    padding: 5px;
+}
 
-.grid {
+.modalPart2 {
+    text-align: center;
+    font-size: 14px; 
+}
+.gridGeneralFormat {
     display:grid;
-    grid-template-columns: repeat(6,1fr);
     grid-gap:3px;
     grid-auto-rows:auto;
-    margin:10px;
+    margin:5px 10px;
+    text-align: center;
+    font-size: 14px; 
 }
 
-.grid > div {
+#gridInfoPokemons {
+    grid-template-columns: repeat(6,1fr);
+}
+
+#gridStatPokemons1 {
+    grid-template-columns: repeat(5,1fr);
+}
+
+#gridStatPokemons2 {
+    grid-template-columns: repeat(4,1fr); 
+}
+.about {
+    padding:15px 10px 10px 10px;
+ }
+
+.gridGeneralFormat > div {
    background:#eee;
-   padding:1em;
+   padding:3px;
 }
 
-.grid1 {
+.gridElementPokemons > h2 {
+    font-size:12px;
+}
+
+#grid1 {
     grid-column:1/3;
 }
-
-.grid2 {
+#grid2 {
     grid-column:3/5;
 }
-
-.grid3 {
+#grid3 {
     grid-column:5/7;
 }
-
-.grid4 {
+#grid4 {
     grid-column:1/4;
 }
-.grid5 {
+#grid5 {
     grid-column:4/7;
 }
-.grid6 {
+#grid6 {
     grid-column:1/7;
 }
-.grid7 {
+#grid7 {
     grid-column:1/7;
 }
+
+
+
+
 /* The Close Button */
+
+.boxModalClose {
+    position: absolute;
+    top:2px;
+    right:10px;
+}
+
 .close {
     color: #aaaaaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
   .close:hover,
   .close:focus {
@@ -385,6 +421,8 @@ table, th, td {
     text-decoration: none;
     cursor: pointer;
   }
+
+
 
 /* estilos del footer */
 
