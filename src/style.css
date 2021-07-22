@@ -292,11 +292,7 @@
 .modalPokeName {
     text-align: center;
     font-weight: bold;
-<<<<<<< HEAD
     font-size: 24px;
-=======
-    font-size: 2vw;
->>>>>>> c5ee7e2c54c7847e284b0a897af57be6d16402c7
     text-transform: capitalize;
     color: rgb(16, 129, 101);
 
