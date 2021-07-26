@@ -255,7 +255,16 @@ const showPokemon = (list) => {
                                        <p>${pkm.stats['base-stamina']}</p>
                                     </div>
                                  </div>
-                                
+
+                                 <section class="evolutions">
+                                 <div class="title-ev">
+                                   <h5>Evolutions & Pre-evolutions</h5>
+                                 </div>
+                                 <div class="body-ev">${showImgEvolution(pkm.evolution)}
+                                 </div> 
+                                 </section>
+
+
                                 </div>
                              </div>
                        </div>

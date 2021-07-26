@@ -377,7 +377,7 @@ export default {
     "buddy-distance-km": "3",
     "evolution": {
       "candy": "charmander candy",
-      "next-evolution": [{
+      "next-evolution": [{                  
         "num": "005",
         "name": "charmeleon",
         "candy-cost": "25",
@@ -13053,7 +13053,7 @@ export default {
         },
         {
           "num": "135",
-          "name": "jolteon",
+          "name": "jolteon",   
           "candy-cost": "25"
         },
         {
